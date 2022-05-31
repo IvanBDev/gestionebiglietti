@@ -18,7 +18,7 @@ public class BigliettoDAOImpl implements BigliettoDAO{
 	@Override
 	public List<Biglietto> list() throws Exception {
 		// TODO Auto-generated method stub
-		return entityManager.createQuery("from Articolo", Biglietto.class).getResultList();
+		return entityManager.createQuery("from Biglietto", Biglietto.class).getResultList();
 	}
 
 	@Override

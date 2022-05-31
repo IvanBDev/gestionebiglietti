@@ -7,7 +7,7 @@
 	 	<!-- Common imports in pages -->
 	 	<jsp:include page="../header.jsp" />
 	   
-	   <title>Inserisci Nuovo Elemento</title>
+	   <title>Modifica l' elemento selezionato</title>
 	 </head>
 	   <body class="d-flex flex-column h-100">
 	   
@@ -34,36 +34,35 @@
 			  
 			  <div class='card'>
 				    <div class='card-header'>
-				        <h5>Inserisci nuovo elemento</h5> 
+				        <h5>Modifica</h5> 
 				    </div>
 				    <div class='card-body'>
-		
-							<h6 class="card-title">I campi con <span class="text-danger">*</span> sono obbligatori</h6>
-		
-		
-							<form method="post" action="ExecuteInsertBigliettoServlet" class="row g-3" novalidate="novalidate">							
+							<form method="post" action="ExecuteModificaBigliettoServlet" class="row g-3" novalidate="novalidate">
+							
+								<input type = "hidden" name = "idBiglietto" value = "${edit_biglietto_attr.id}">
+							
 								<div class="col-md-6">
-									<label for="codice" class="form-label">Partenza <span class="text-danger">*</span></label>
+									<label for="codice" class="form-label">Partenza</label>
 									<input type="text" name="partenza" id="partenza" class="form-control" placeholder="Inserire la partenza"  
-										value="${insert_biglietto_attr.partenza}" required>
+										value="${edit_biglietto_attr.partenza}" required>
 								</div>
 								
 								<div class="col-md-6">
-									<label for="descrizione" class="form-label">Destinazione <span class="text-danger">*</span></label>
+									<label for="descrizione" class="form-label">Destinazione</label>
 									<input type="text" name="destinazione" id="destinazione" class="form-control" placeholder="Inserire la destinazione"  
-										value="${insert_biglietto_attr.destinazione}" required>
+										value="${edit_biglietto_attr.destinazione}" required>
 								</div>
 							
 								<div class="col-md-6">
-									<label for="prezzo" class="form-label">Prezzo <span class="text-danger">*</span></label>
+									<label for="prezzo" class="form-label">Prezzo</label>
 									<input type="number" class="form-control" name="prezzo" id="prezzo" placeholder="Inserire prezzo" 
-									value="${insert_biglietto_attr.prezzo}" required>
+									value="${edit_biglietto_attr.prezzo}" required>
 								</div>
 								
 								<div class="col-md-3">
-									<label for="dataNascita" class="form-label">Data<span class="text-danger">*</span></label>
+									<label for="data" class="form-label">Data</label>
 									<input class="form-control"  name="data" id="data" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
-										value="${insert_biglietto_attr.data}">
+										value="${edit_biglietto_attr.data}" required/>
 								</div>
 								
 								
