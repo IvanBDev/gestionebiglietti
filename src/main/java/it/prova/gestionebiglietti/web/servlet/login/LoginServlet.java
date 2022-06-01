@@ -26,14 +26,14 @@ public class LoginServlet extends HttpServlet {
 		if (loginInput.equals("admin") && passwordInput.equals("admin")) {
 			request.getSession().setAttribute("userInfo",
 					new Utente(loginInput, passwordInput, "Admin", "User", Arrays.asList(new Ruolo(Ruolo.ADMIN_ROLE))));
-			request.getRequestDispatcher("home.jsp").forward(request, response);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 			return;
 		}
 
 		if (loginInput.equals("user") && passwordInput.equals("user")) {
 			request.getSession().setAttribute("userInfo", new Utente(loginInput, passwordInput, "Classic", "User",
 					Arrays.asList(new Ruolo(Ruolo.CLASSIC_USER_ROLE))));
-			request.getRequestDispatcher("home.jsp").forward(request, response);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 			return;
 		}
 
